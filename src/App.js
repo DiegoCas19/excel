@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {Data} from './Components/Data'
 import * as XLSX from 'xlsx'
+import { Data2 } from './Components/Data2';
 
 function App() {
    
@@ -81,8 +82,7 @@ function App() {
 
       
 
-
-
+     
 
     }
     else{
@@ -130,9 +130,12 @@ function App() {
 
           
           <div className='table-responsive'>
-            <table className='table'>
-            <p>total de registro: ({excelData.filter(valor=>valor.Equipo).length})</p>
+
+ <p>total de registro: ({excelData.filter(valor=>valor.Equipo).length})</p>
             <p>Promedio de edad de los inchas de Racing: ({ (value / (excelData.filter(valor=>valor.Equipo==="Racing").length)).toFixed(2)})</p>
+           
+
+            <table className='table'>
            
             
            
@@ -151,7 +154,7 @@ function App() {
 
                  
                
-               <Data excelData={excelData}/>
+               {value1}
 
                
                

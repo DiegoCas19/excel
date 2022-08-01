@@ -132,33 +132,31 @@ console.log(
 
 console.log(
     '\n 4. 2 Nombre más comunes con los hinchas de River',
-    // 3 daniel
-    //  1 alejo
-    //  1 anibal
-    (() => {
-        // obtengo el equipo
-        const delEquipo = data.filter((d) => {
-            if (d.equipo === 'River') {
-                return d;
-            }
-        });
+    console.log(
+        "\n 4. 2 Nombre más comunes con los hinchas de River",
+        (() => {
 
-        // obtengo arr de nombres
-        const nombres = delEquipo.map((data) => {
-            return data.nombre;
-        });
 
-        // console.log({ nombres });
-        const arr = [];
-        for (const value of nombres) {
-            if (!arr.includes(value)) {
-                arr.push();
-            }
-        }
-
-        // acumulo nombres iguales y corto el array a 2 (en el ejercicio es 5)
-        const arrNombresUnicos = [...new Set(nombres)];
-        return arrNombresUnicos;
+            
+          const delEquipo = data.filter((d) => d.equipo === "River");
+      
+          const nombres = delEquipo.map((data) => data.nombre);
+      
+          console.log(nombres.length);
+      
+          console.log("Repetidos");
+          const busqueda = delEquipo.reduce((acc, persona) => {
+            acc[persona.nombre] = ++acc[persona.nombre] || 0;
+            return acc;
+          }, {});
+      
+          const duplicados = delEquipo.filter((persona) => {
+            return busqueda[persona.nombre];
+          });
+      
+          console.log(duplicados);
+        
+      
     })()
 );
 
